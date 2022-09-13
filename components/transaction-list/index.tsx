@@ -5,12 +5,25 @@ import ListItem from "./ListItem";
 
 type TransactionListProps = {
   data: Array<Transaction>;
+  toggleTransactionFunction: (id: number) => void;
+  removeTransactionFunction: (id: number) => void;
 };
-const TransactionList = ({ data }: TransactionListProps) => {
+const TransactionList = ({
+  data,
+  toggleTransactionFunction,
+  removeTransactionFunction,
+}: TransactionListProps) => {
   return (
     <FlatList
       data={data}
-      renderItem={({ item, index }) => <ListItem transaction={item} />}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={({ item }) => (
+        <ListItem
+          transaction={item}
+          toggleTransactionFunction={toggleTransactionFunction}
+          removeTransactionFunction={removeTransactionFunction}
+        />
+      )}
     />
   );
 };

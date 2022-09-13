@@ -1,11 +1,17 @@
 import {} from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View, StatusBar } from "react-native";
-import { AddTransaction, Greeting, TransactionList } from "./components";
-
-import config from "./config";
+import { StyleSheet, View, StatusBar, Platform } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import {
+  AddTransaction,
+  Balance,
+  Greeting,
+  TransactionList,
+} from "./components";
+import colors from "./colors";
 
 export interface Transaction {
+  id: number;
   value: number;
   paid: boolean;
   description: string;
@@ -15,19 +21,50 @@ export default function App() {
   const [transactionList, setTransactionList] = useState<Array<Transaction>>(
     []
   );
+  const addTransaction = ({
+    value,
+    description,
+  }: {
+    value: number;
+    description: string;
+  }) => {
+    setTransactionList((prev) => [
+      ...prev,
+      { id: Date.now(), value, paid: false, description },
+    ]);
+  };
+
+  const removeTransaction = (id: number) => {
+    setTransactionList((prev) => {
+      return prev.filter((item) => item.id !== id);
+    });
+  };
+
+  const toggleTransaction = (id: number) => {
+    setTransactionList((prev) =>
+      prev.map((transaction) =>
+        transaction.id === id
+          ? { ...transaction, paid: !transaction.paid }
+          : transaction
+      )
+    );
+  };
+
   return (
     <View style={styles.container}>
+      <LinearGradient
+        colors={["#ffffff00", colors.secondary]}
+        style={styles.background}
+      />
       <Greeting />
-      <AddTransaction
-        addTransactionFunction={(transaction) => {
-          setTransactionList((prev) => [...prev, transaction]);
-        }}
+      <Balance transactions={transactionList} />
+      <AddTransaction addTransactionFunction={addTransaction} />
+      <TransactionList
+        data={transactionList}
+        toggleTransactionFunction={toggleTransaction}
+        removeTransactionFunction={removeTransaction}
       />
-      <TransactionList data={transactionList} />
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor={config.colorPalette[2]}
-      />
+      <StatusBar barStyle="dark-content" backgroundColor={colors.primary} />
     </View>
   );
 }
@@ -35,9 +72,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: config.colorPalette[2],
+    paddingTop: Platform.OS === "ios" ? 50 : 10,
+    backgroundColor: colors.primary,
     padding: 10,
-    // alignItems: "center",
-    // justifyContent: "center",
+  },
+  background: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 500,
   },
 });
