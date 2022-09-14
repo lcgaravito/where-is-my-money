@@ -2,6 +2,7 @@
   "expo": {
     "name": "where-is-my-money",
     "slug": "where-is-my-money",
+    "owner": "luisgaravito",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
