@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     textAlign: "center",
+    fontSize: 18,
   },
   modalText: {
     marginBottom: 15,

@@ -6,10 +6,9 @@ const Greeting = () => {
   return (
     <View style={styles.root}>
       <View>
-        <Text style={styles.label}>Hola</Text>
-        <Text style={styles.name}>Luis</Text>
+        <Text style={styles.name}>Hola, Luis</Text>
       </View>
-      <Ionicons name="person-circle-outline" size={50} color="white" />
+      <Ionicons name="person-circle-outline" size={40} color="white" />
     </View>
   );
 };
@@ -21,15 +20,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     margin: 5,
   },
-  label: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 20,
-  },
   name: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 40,
+    fontSize: 35,
   },
 });
 
