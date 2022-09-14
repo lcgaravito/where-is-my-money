@@ -39,16 +39,19 @@ const ListItem = ({
             style={[styles.button, styles.deleteButton]}
             onPress={() => removeTransactionFunction(transaction.id)}
           >
-            <AntDesign name="delete" size={24} color="black" />
+            <AntDesign name="delete" size={24} color={colors.gray} />
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.button, styles.checkButton]}
+            style={[
+              styles.button,
+              transaction.paid ? styles.checkedButton : styles.uncheckedButton,
+            ]}
             onPress={() => toggleTransactionFunction(transaction.id)}
           >
             {transaction.paid ? (
-              <AntDesign name="checksquareo" size={24} color="black" />
+              <AntDesign name="checksquareo" size={24} color={colors.gray} />
             ) : (
-              <Ionicons name="square-outline" size={24} color="black" />
+              <Ionicons name="square-outline" size={24} color={colors.gray} />
             )}
           </TouchableOpacity>
         </View>
@@ -82,7 +85,10 @@ const styles = StyleSheet.create({
   deleteButton: {
     backgroundColor: colors.error,
   },
-  checkButton: {
+  checkedButton: {
+    backgroundColor: colors.success,
+  },
+  uncheckedButton: {
     backgroundColor: colors.primary,
   },
   background: {

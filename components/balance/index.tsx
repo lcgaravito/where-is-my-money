@@ -4,6 +4,7 @@ import { Transaction } from "../../App";
 import { Card } from "../../utils";
 import SummaryCard from "./SummaryCard";
 import { numberWithCommas } from "../../utils/functions";
+import colors from "../../colors";
 
 type BalanceProps = {
   transactions: Transaction[];
@@ -33,14 +34,17 @@ const Balance = ({ transactions }: BalanceProps) => {
         <SummaryCard
           title="% Pagado:"
           value={"% " + Math.round(gastado ? (pagado / gastado) * 100 : 0)}
+          color={colors.success}
         />
         <SummaryCard
           title="Has gastado:"
           value={"$ " + numberWithCommas(gastado)}
+          color={colors.primary}
         />
         <SummaryCard
           title="Has pagado:"
           value={"$ " + numberWithCommas(pagado)}
+          color={colors.success}
         />
       </ScrollView>
     </View>

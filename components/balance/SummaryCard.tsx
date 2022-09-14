@@ -7,14 +7,15 @@ import colors from "../../colors";
 type SummaryCardProps = {
   title: string;
   value: string;
+  color: string;
 };
 
-const SummaryCard = ({ title, value }: SummaryCardProps) => {
+const SummaryCard = ({ title, value, color }: SummaryCardProps) => {
   return (
     <Card backgroundColor="white">
       <View style={styles.root}>
         <View style={styles.icon}>
-          <Feather name="bar-chart-2" size={40} color={colors.primary} />
+          <Feather name="bar-chart-2" size={40} color={color} />
         </View>
         <View>
           <Text style={styles.title}> {title} </Text>
@@ -39,8 +40,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
+    color: colors.gray,
   },
   value: {
     fontSize: 40,
+    color: colors.gray,
   },
 });

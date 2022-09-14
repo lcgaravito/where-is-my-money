@@ -9,6 +9,7 @@ import {
   TransactionList,
 } from "./components";
 import colors from "./colors";
+import DeleteTransaction from "./components/delete-transaction";
 
 export interface Transaction {
   id: number;
@@ -21,6 +22,9 @@ export default function App() {
   const [transactionList, setTransactionList] = useState<Array<Transaction>>(
     []
   );
+  const [transactionToDelete, setTransactionToDelete] = useState<
+    Transaction | undefined
+  >(undefined);
   const addTransaction = ({
     value,
     description,
@@ -59,9 +63,18 @@ export default function App() {
       <Greeting />
       <Balance transactions={transactionList} />
       <AddTransaction addTransactionFunction={addTransaction} />
-      <TransactionList
-        data={transactionList}
-        toggleTransactionFunction={toggleTransaction}
+      {!transactionToDelete && (
+        <TransactionList
+          data={transactionList}
+          toggleTransactionFunction={toggleTransaction}
+          removeTransactionFunction={(id) =>
+            setTransactionToDelete(transactionList.find((tra) => tra.id === id))
+          }
+        />
+      )}
+      <DeleteTransaction
+        transaction={transactionToDelete}
+        onRequestClose={() => setTransactionToDelete(undefined)}
         removeTransactionFunction={removeTransaction}
       />
       <StatusBar barStyle="dark-content" backgroundColor={colors.primary} />
