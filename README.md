@@ -5,23 +5,15 @@ Where's My Money is an Expense Tracking Mobile App built with Typescript and Rea
 ### iOS Screenshots
 
 <div style="display: flex; flex-wrap: wrap;">
-  <div style="margin: 5">
-    <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS.png" width="300" height="auto" />
-  </div>
-  <div style="margin: 5">
-    <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS-Modal-Delete.png" width="300" height="auto" />
-  </div>
+  <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS.png" width="300" height="auto" />
+  <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS-Modal-Delete.png" width="300" height="auto" />
 </div>
 
 ### Android Screenshots
 
 <div style="display: flex; flex-wrap: wrap;">
-  <div style="margin: 5">
-    <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-Android.png" width="300" height="auto" />
-  </div>
-  <div style="margin: 5">
-    <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-Android-Modal-Delete.png" width="300" height="auto" />
-  </div>
+  <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-Android.png" width="300" height="auto" />
+  <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-Android-Modal-Delete.png" width="300" height="auto" />
 </div>
 
 ## Prerequisites 💻
