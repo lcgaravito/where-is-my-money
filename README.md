@@ -2,6 +2,9 @@
 
 Where's My Money is an Expense Tracking Mobile App built with Typescript and React Native.
 
+![Screenshot of the app on iOS](https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS.png)
+![Screenshot of the app on iOS](https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS.png)
+
 ## Prerequisites 💻
 
 - Have at least version 16 of node js installed
