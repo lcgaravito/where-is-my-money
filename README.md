@@ -1,3 +1,19 @@
-# where-is-my-money
+# Where is my money
 
-Expense tracking mobile app built using Typescript and React Native.
+Where's My Money is an Expense Tracking Mobile App built with Typescript and React Native.
+
+## Prerequisites 💻
+
+- Have at least version 16 of node js installed
+- Globally install the Expo Application Development Tools via the following command: `npm i -g expo-cli`
+- For more information about the development environment, see the following link to the Expo documentation: https://docs.expo.dev/
+
+## Installation ⚙️
+
+- Clone the project via git
+- Enter the project folder through the terminal:`cd where-is-my-money`
+- Install dependencies: `npm i`
+
+## Launch 🚀
+
+- Start the project locally using the command: `npm start`
