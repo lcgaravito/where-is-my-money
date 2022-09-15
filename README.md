@@ -2,14 +2,16 @@
 
 Where's My Money is an Expense Tracking Mobile App built with Typescript and React Native.
 
-### iOS Screenshots
+[Application wireframe diagram 📝📐](https://github.com/lcgaravito/where-is-my-money/blob/main/Wireframe.png)
+
+### iOS Screenshots 📱
 
 <div style="display: flex; flex-wrap: wrap;">
   <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS.png" width="300" height="auto" />
   <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-iOS-Modal-Delete.png" width="300" height="auto" />
 </div>
 
-### Android Screenshots
+### Android Screenshots 📱
 
 <div style="display: flex; flex-wrap: wrap;">
   <img src="https://raw.githubusercontent.com/lcgaravito/where-is-my-money/main/screenshots/Screenshot-Android.png" width="300" height="auto" />
